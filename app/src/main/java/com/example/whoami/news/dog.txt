@@ -1,0 +1,267 @@
+package com.example.whoami.news;
+
+
+import android.os.Bundle;
+import android.app.Fragment;
+import android.os.Handler;
+import android.os.Message;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import com.wilddog.client.DataSnapshot;
+
+import com.wilddog.client.ValueEventListener;
+import com.wilddog.client.Wilddog;
+import com.wilddog.client.WilddogError;
+
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+
+
+public class FirendsFragment extends Fragment {
+
+
+
+    Wilddog mWilddogRef;
+    View v;
+    ListView listView;
+
+    Handler handler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            //super.handleMessage(msg);
+            switch (msg.what){
+                case 1:
+                    Toast.makeText(getActivity(), "ok", Toast.LENGTH_SHORT).show();
+                    //传递对象
+                    List<User> list = (List<User>) msg.obj;
+                    break;
+            }
+        }
+    };
+    public FirendsFragment() {
+
+    }
+
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+
+
+        return inflater.inflate(R.layout.fragment_firends, container, false);
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        this.v = view;
+        listView = (ListView) v.findViewById(R.id.firendlistview);
+        User u = new User();
+        u.setEmail("32@qq.com");
+        u.setName("nsns");
+        u.setPwd("sdfsd");
+        HashMap<String,String> map = new HashMap<>();
+        map.put("key","2323");
+        u.setFirends(map);
+        mWilddogRef = new Wilddog("https://xungebug.wilddogio.com/");
+
+        Toast.makeText(getActivity(), "run", Toast.LENGTH_SHORT).show();
+        //使用hander
+
+        mWilddogRef.child("appuser").addValueEventListener(new ValueEventListener() {
+            ArrayList<User> ulist = new ArrayList<User>();
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Iterator<DataSnapshot> iterator = dataSnapshot.getChildren().iterator();
+                while (iterator.hasNext()) {
+                    DataSnapshot ds = iterator.next();
+                    User uu = (User) ds.getValue(User.class);
+                    ulist.add(uu);
+                    //Toast.makeText(getActivity(), uu.toString(), Toast.LENGTH_SHORT).show();
+                }
+                Message msg = new Message();
+                msg.what=1;
+                msg.obj = ulist;
+                handler.sendMessage(msg);
+            }
+
+            @Override
+            public void onCancelled(WilddogError wilddogError) {
+
+            }
+        });
+        mWilddogRef.child("appuser/user2").setValue(u);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+===================================================================
+===================================================================
+===================================================================
+===================================================================
+
+
+
+
+
+
+package com.example.whoami.news;
+
+
+import android.os.Bundle;
+import android.app.Fragment;
+import android.os.Handler;
+import android.os.Message;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
+import android.widget.Toast;
+
+import com.wilddog.client.DataSnapshot;
+
+import com.wilddog.client.ValueEventListener;
+import com.wilddog.client.Wilddog;
+import com.wilddog.client.WilddogError;
+
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
+
+public class FirendsFragment extends Fragment {
+
+
+
+    Wilddog mWilddogRef;
+    View v;
+    ListView listView;
+    SimpleAdapter ad;
+
+    Handler handler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            //super.handleMessage(msg);
+            switch (msg.what){
+                case 1:
+                    Toast.makeText(getActivity(), "ok", Toast.LENGTH_SHORT).show();
+                    //传递对象
+                    ArrayList<User> list = (ArrayList<User>) msg.obj;
+                    initList(list);
+                    break;
+                case 2:
+                    Toast.makeText(getActivity(), "你还没有好友", Toast.LENGTH_SHORT).show();
+                    break;
+            }
+        }
+    };
+    public FirendsFragment() {
+
+    }
+
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+
+
+        return inflater.inflate(R.layout.fragment_firends, container, false);
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        this.v = view;
+        listView = (ListView) v.findViewById(R.id.firendlistview);
+
+        initdog();
+
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+    }
+    public void initdog(){
+        mWilddogRef = new Wilddog("https://xungebug.wilddogio.com/");
+        mWilddogRef.child("appuser").addValueEventListener(new ValueEventListener() {
+            ArrayList<User> ulist = new ArrayList<User>();
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Iterator<DataSnapshot> iterator = dataSnapshot.getChildren().iterator();
+                while (iterator.hasNext()) {
+                    DataSnapshot ds = iterator.next();
+                    User uu = (User) ds.getValue(User.class);
+                    ulist.add(uu);
+                    //Toast.makeText(getActivity(), uu.toString(), Toast.LENGTH_SHORT).show();
+                }
+                Message msg = new Message();
+                msg.what=1;
+                msg.obj = ulist;
+                handler.sendMessage(msg);
+            }
+
+            @Override
+            public void onCancelled(WilddogError wilddogError) {
+
+            }
+        });
+    }
+    List<Map<String, Object>> data = new ArrayList<Map<String, Object>>();
+
+    public void initList(ArrayList<User> luser){
+
+
+        for(int i=0;i<luser.size();i++){
+            User us = luser.get(i);
+            if (us.getFirends()==null)continue;
+            Map<String,Object> item = new HashMap<String,Object>();
+            Map<String, String> map = us.getFirends();
+            for (Map.Entry<String, String> entry : map.entrySet()) {
+
+                item.put("user", entry.getKey());
+                item.put("room", entry.getValue());
+
+                data.add(item);
+            }
+
+        }
+
+        String[] from = {"user"};
+        int[] to = {R.id.firend};
+        ad = new SimpleAdapter(getActivity(),data,R.layout.firendsitem,from,to);
+        this.listView.setAdapter(ad);
+    }
+}
+
+
+设计说明：
+    图片的加载有两个：第一个加载小图片是先到内存里找，第二个是先到硬盘里找
+

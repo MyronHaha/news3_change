@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="240dip"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="240dip"
+        android:layout_height="match_parent"
+        android:background="@drawable/menu_bg"
+        android:orientation="vertical" >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:id="@+id/user_info"
+
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginBottom="18dp">
+            <ImageButton
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/buddy_9_mb5ucom"
+                android:layout_margin="3dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:id="@+id/user_image"/>
+            <TextView
+                android:id="@+id/username_tx"
+                android:layout_toRightOf="@id/user_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Myron_Yu"
+                android:textSize="19sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="8dp"/>
+            <TextView
+                android:id="@+id/usersign_tx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="最近比较烦"
+                android:textStyle="italic"
+                android:textSize="15sp"
+                android:textColor="@color/darkgray"
+                android:layout_alignBottom="@+id/user_image"
+                android:layout_alignLeft="@+id/username_tx"
+                android:layout_alignStart="@+id/username_tx" />
+        </RelativeLayout>
+        <TextView
+            style="@style/tab_style"
+            android:id="@+id/menu_localnews"
+            android:background="@drawable/menu_selector"
+            android:drawableLeft="@drawable/tab_local"
+            android:text="本地新闻"
+            android:onClick="localnew_click"
+            />
+        <TextView
+            style="@style/tab_style"
+            android:background="@drawable/menu_selector"
+            android:drawableLeft="@drawable/tab_ties"
+            android:text="我的消息"
+            android:onClick="mynews_click"/>
+
+        <TextView
+            style="@style/tab_style"
+            android:background="@drawable/menu_selector"
+            android:drawableLeft="@drawable/tab_read"
+            android:text="我的收藏" />
+
+        <TextView
+            style="@style/tab_style"
+            android:background="@drawable/menu_selector"
+            android:drawableLeft="@drawable/tab_focus"
+            android:text="热点话题" />
+
+        <TextView
+            style="@style/tab_style"
+            android:background="@drawable/menu_selector"
+            android:drawableLeft="@drawable/tab_ugc"
+            android:text="离线阅读" />
+    </LinearLayout>
+
+</ScrollView>

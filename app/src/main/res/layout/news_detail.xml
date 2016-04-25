@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cornsilk">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/d_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="这是新闻的题目"
+        android:textStyle="bold"
+        android:textSize="26sp"
+        android:textColor="@color/black"
+     android:layout_marginTop="3sp"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/time"
+        android:text="新闻眼 04-24 22:01:04"
+        android:layout_below="@+id/d_title"
+        android:layout_centerHorizontal="true" />
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@color/lightgray"
+        android:id="@+id/singleLine"
+        android:layout_below="@+id/time"
+        android:layout_alignParentStart="true" />
+  <com.loopj.android.image.SmartImageView
+      android:id="@+id/image"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:src="@drawable/buddy_9_mb5ucom"
+      android:gravity="center_vertical|center_horizontal"
+      android:layout_below="@+id/singleLine"
+      android:layout_centerHorizontal="true"
+      android:layout_marginTop="23dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/d_detail"
+        android:textSize="16sp"
+        android:textColor="@color/darkslategrey"
+        android:text="       新浪科技讯 4月23日下午消息，中国企业家俱乐部2016年绿公司年会今日在山东济南举行，新东方董事长兼首席执行官俞敏洪在“十人看十年”环节应邀发表演讲。
+外的优质教育，学成以后回国干活，对中国来说节约了好多成本，干吗不呢？一定要拒绝世界交流，办中国一流大学，我特别烦中国各个大学说要办世界一流大学，世界一流大学是自然办成的，不是你喊出来的，慢慢跟国际接轨。我跟教育部说中国至少有一两所大学应该全英文教学，你要办世界一流大学应该让世界的学生来读书。你不如把中国的某些大学，比如北大、清华中有一所办成全英文大学，为什么不行呢？我不知道。马云在摇头，为什么摇头？不符合社会主义核心价值观是吗？等会儿马云上来讲的时候，让他来表达自己的观点。"
+        android:layout_below="@+id/image"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="25dp" />
+</RelativeLayout>
+</ScrollView>

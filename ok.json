@@ -1,0 +1,102 @@
+{
+  "appuser": {
+    "111": {
+      "email": "111@qq.com",
+      "name": "111",
+      "pwd": "111"
+    }
+  },
+  "chat": {
+    "-KEM4YKES2XvdxbRqFOC": {
+      "author": "WilddogUser50104",
+      "message": "你好"
+    },
+    "-KEMHlXBR4Gixl2u-NGM": {
+      "author": "WilddogUser50104",
+      "message": "好难啊"
+    },
+    "-KEMPzUOs9ccdLC3M6FJ": {
+      "author": "WilddogUser50104",
+      "message": "现在我要做登录等简单的页面了"
+    },
+    "-KERbzFg_kvpB4aXxih3": {
+      "author": "WilddogUser50104",
+      "message": "你好"
+    }
+  },
+  "news": {
+    "-KEM66Xz2XXajcVzcTg2": {
+      "auth": "11111111111意识",
+      "message": "新闻内容范德萨范德萨发的范德萨       ",
+      "time": 21334,
+      "title": "标题"
+    },
+    "-KEM6Hvi16VDaKTwUNtA": {
+      "auth": "勋哥哥",
+      "message": "新闻内容",
+      "time": "21334",
+      "title": "标题"
+    },
+    "-KEM6IBaAOq-wzcy1vNp": {
+      "auth": "勋哥哥",
+      "message": "新闻内容",
+      "time": "21334",
+      "title": "标题"
+    },
+    "-KEM6ITXZGW__SP54OBH": {
+      "auth": "勋哥哥",
+      "message": "新闻内容",
+      "time": "21334",
+      "title": "标题"
+    },
+    "-KEML_LKQY2mBjmBir6B": {
+      "auth": "勋哥哥",
+      "message": "新闻内容",
+      "time": "21334",
+      "title": "标题"
+    },
+    "-KEMLaUgXMlP7Rv8tJZR": {
+      "auth": "勋哥哥",
+      "message": "新闻内容",
+      "time": "21334",
+      "title": "标题"
+    },
+    "-KEMLaqEE-1jMhKxMAoa": {
+      "auth": "勋哥哥",
+      "message": "新闻内容",
+      "time": "21334",
+      "title": "标题"
+    },
+    "-KEMLbD8Owv6Mc9ue8Fq": {
+      "auth": "勋哥哥",
+      "message": "新闻内容",
+      "time": "21334",
+      "title": "标题"
+    },
+    "-KEMLeKcvNMDx0BRlxw2": {
+      "auth": "勋哥哥",
+      "message": "新闻内容",
+      "time": "21334",
+      "title": "标题"
+    }
+  },
+  "rooms": {
+    "666666": {
+      "1459175433": {
+        "name": "xungege1",
+        "sendtime": "2016/3/28",
+        "text": "hello"
+      },
+      "1459175444": {
+        "name": "xungege1",
+        "sendtime": "2016/3/28",
+        "text": "hello"
+      },
+      "1459175548": {
+        "name": "xungege1",
+        "sendtime": "2016/3/28 下午10:32:28",
+        "text": "hello"
+      }
+    }
+  }
+}

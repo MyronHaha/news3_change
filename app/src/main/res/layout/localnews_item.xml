@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+   <com.loopj.android.image.SmartImageView
+       android:id="@+id/my_image"
+
+       android:src="@drawable/buddy_9_mb5ucom"
+       android:layout_width="105dip"
+       android:layout_height="65dip"/>
+   <TextView
+      android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:id="@+id/item_title"
+       android:textStyle="bold"
+       android:singleLine="true"
+       android:textSize="17sp"
+       android:text="这是新闻题目"
+       android:textColor="@color/gray"
+       android:layout_alignParentTop="true"
+       android:layout_toRightOf="@+id/my_image"
+       android:layout_marginLeft="5dp"
+       android:layout_marginTop="5dp"/>
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:id="@+id/item_content"
+
+       android:textSize="14sp"
+       android:text="根据国务院的201602516号文件，我国将于2016年与英国结盟assdfsadfs"
+       android:textColor="@color/slategrey"
+
+       android:layout_below="@+id/item_title"
+       android:layout_toRightOf="@+id/my_image"
+       android:layout_marginTop="3dp"
+       android:layout_marginLeft="3dp"
+       android:singleLine="false"
+       android:maxEms="15"
+       android:lines="2"
+       android:ellipsize="end"
+
+   />
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:id="@+id/item_comment"
+       android:layout_alignParentRight="true"
+       android:layout_alignParentBottom="true"
+       android:textSize="12sp"
+       android:textColor="@color/red"
+       android:text="225评"/>
+
+</RelativeLayout>
